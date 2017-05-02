@@ -1,11 +1,9 @@
 import wx
-from fetcher_improved import Fetcher
-from analyzer_classified import Analyzer
 from officialBrowser import MyWindow
 
 class First(wx.Frame):
     def __init__(self,*args,**kwargs):
-        wx.Frame.__init__(self, None, wx.ID_ANY,'asd',pos=(500,200), size = (650,500), style = wx.DEFAULT_FRAME_STYLE | wx.NO_FULL_REPAINT_ON_RESIZE)
+        wx.Frame.__init__(self, None, wx.ID_ANY,'Video Browser',pos=(500,200), size = (650,500), style = wx.DEFAULT_FRAME_STYLE | wx.NO_FULL_REPAINT_ON_RESIZE)
         print('inside')
         panel = wx.Panel(self)
         panel.SetBackgroundColour((255,153,153))
@@ -27,9 +25,7 @@ class First(wx.Frame):
         mw.Show()
        # mw.play(videoId)
         
-        Fetcher.fetch(videoId)
-        Analyzer.Analyze(videoId)
-
+        
 app=wx.App()
 f = First()
 app.MainLoop()
